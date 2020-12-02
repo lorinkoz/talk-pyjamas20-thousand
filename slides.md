@@ -7,26 +7,11 @@ class: middle
 
 ---
 
-## Syntax error
-
-Django.emph[es] &rightarrow; Django
-
--   Django.emph[s]
--   Django.emph[es]
-
---
-
-<br/>
-
-# A thousand Django.emph[es] within
-
----
-
 ## Hi, I am...
 
 .left-column-66[
 
-#### Lorenzo Peña
+## .high[.blue[Lorenzo Peña]]
 
 -   Proud citizen of Holguín, Cuba.
 -   Django developer for 11 years.
@@ -40,11 +25,11 @@ Django.emph[es] &rightarrow; Django
 class: middle
 layout: false
 
-## .blue[How to fit a thousand Djangoes in a single Django?]
+## How to fit a thousand Djangoes in a single Django?
 
 --
 
-# .green[Why does it matter?]
+# .red[Why does it matter?]
 
 ---
 
@@ -151,12 +136,13 @@ layout: true
 ---
 
 layout: false
+class: middle center
 
-.box[`echo "Awesome!"`<br/>`python3 manage.py add-multi-tenancy --asap`]
+![Django pony](images/django-pony.png)
 
 --
 
-.right[![Meme of Boromir "One does not simply walk into Mordor" about multi-tenancy](images/boromir-mordor-meme-multi-tenancy.png)]
+.high[`python3 manage.py add-multi-tenancy --asap`]
 
 ---
 
@@ -197,9 +183,7 @@ Question.objects.all()
 
 <br/>
 
-.center[**Ok, but where?**]
-
-<br/>
+# .center[.red[Ok, but where?]]
 
 --
 
@@ -244,7 +228,7 @@ Django has a couple APIs we're likely familiar with:
 
 --
 
-We could also have:
+Then it's possible to have:
 
 |           |                        |                    |
 | --------- | ---------------------- | ------------------ |
@@ -411,7 +395,7 @@ Question.objects.`db_manager(active_db)`.do_something(...)
 
 ---
 
-Scope could be offloaded to **database routers**:
+Scope can be offloaded to **database routers**:
 
 ```python
 class IsolatedTenantsDatabaseRouter:
@@ -482,7 +466,7 @@ some_user.questions.filter(`tenant=tenant`, ...)
 
 ---
 
-Tenant field could be automatically **assigned** via:
+Tenant field can be automatically **assigned** via:
 
 -   Default value for the field (a callable).
 -   Custom field (`ForeignKey` subclass) with a `pre_save` hook.
@@ -490,7 +474,7 @@ Tenant field could be automatically **assigned** via:
 
 --
 
-Tenant scope could be automatically **queried** via:
+Tenant scope can be automatically **queried** via:
 
 -   Custom manager.
 -   Custom queries.
@@ -556,7 +540,7 @@ layout: true
 
 ---
 
-Your queries remain unchanged:
+Queries remain unchanged:
 
 ```python
 Question.objects.all()
